@@ -107,6 +107,7 @@ import {
     renderInfusionGraph,
     renderPulmonaryGraph
 } from "./examples/controls/realTime";
+import { renderVitalsGraphVsUnsigned } from "./examples/controls/realTimeSBS";
 
 renderSiteApp(
     [
@@ -132,6 +133,11 @@ renderSiteApp(
                     pathname: "/real-time/sedatives",
                     content: renderSedativesGraph,
                     title: "Sedatives"
+                },
+                {
+                    pathname: "/real-time/vital-sbs",
+                    content: renderVitalsGraphVsUnsigned,
+                    title: "Vitals Side-by-Side"
                 }
             ]
         },
