@@ -101,9 +101,40 @@ import {
 import { renderSplineLine } from "./examples/controls/spline";
 import { renderTimeline } from "./examples/controls/timeline";
 import { createElementLegendBindTo } from "./examples/helpers";
+import {
+    renderVitalsGraph,
+    renderSedativesGraph,
+    renderInfusionGraph,
+    renderPulmonaryGraph
+} from "./examples/controls/realTime";
 
 renderSiteApp(
     [
+        {
+            pathname: "/real-time",
+            children: [
+                {
+                    pathname: "/real-time/vital",
+                    content: renderVitalsGraph,
+                    title: "Vitals"
+                },
+                {
+                    pathname: "/real-time/swan",
+                    content: renderPulmonaryGraph,
+                    title: "Swan"
+                },
+                {
+                    pathname: "/real-time/infusion",
+                    content: renderInfusionGraph,
+                    title: "Infusion"
+                },
+                {
+                    pathname: "/real-time/sedatives",
+                    content: renderSedativesGraph,
+                    title: "Sedatives"
+                }
+            ]
+        },
         {
             pathname: "/line",
             children: [
